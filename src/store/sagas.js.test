@@ -1,0 +1,30 @@
+import { call, put, takeLatest } from "redux-saga/effects";
+
+import axios from "axios";
+import { actions, types } from "./actions";
+
+function* getListSaga() {
+  const { data } = yield call(() => axios.get(`/lists`));
+  yield put(actions.GET_LIST.SUCCESS(data));
+}
+
+function* createItemSaga({ payload, callback }) {
+  const { status } = yield call(() =>
+    axios.post(`/create`, {
+      name: payload.name,
+      winnerTeam: payload.winnerTeam,
+      coverImg: payload.coverImg,
+    })
+  );
+
+  if (status) {
+    const { data } = yield call(() => axios.get(`/lists`));
+    yield put(actions.GET_LIST.SUCCESS(data));
+  }
+  callback && typeof callback === "function" && callback();
+}
+
+export default function* () {
+  yield takeLatest(types.GET_LIST.REQUEST, getListSaga);
+  yield takeLatest(types.CREATE_ITEM.REQUEST, getMaterialSaga);
+}

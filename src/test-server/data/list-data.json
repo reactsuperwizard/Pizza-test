@@ -1,0 +1,31 @@
+{
+  "type": ["Cheese", "Vegetarian", "Meat Lover"],
+  "material": {
+    "Cheese": [
+      "Tomatoes",
+      "Red Peppers",
+      "Artichokes",
+      "Butternut Squash",
+      "Broccoli",
+      "Fennel",
+      "Cauliflower"
+    ],
+    "Vegetarian": [
+      "Cornmeal",
+      "Tomato sauce",
+      "Firm mozzarella cheese",
+      "Fresh soft mozzarella cheese",
+      "Fontina cheese",
+      "Parmesan cheese",
+      "Feta cheese"
+    ],
+    "Meat Lover": [
+      "Bacon Rashers",
+      "Beef",
+      "Italian Sausage",
+      "Pepperoni",
+      "Smoky Honey Ham",
+      "Stea"
+    ]
+  }
+}

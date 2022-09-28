@@ -1,0 +1,5 @@
+import { combineReducers } from "redux";
+
+// import { listReducer } from "../ListMaterial/store";
+
+export default () => combineReducers({ listReducer });
